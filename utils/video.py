@@ -1,5 +1,6 @@
 import cv2
 
+
 class Frame:
     RECTANGLR_COLOR = (0, 255, 0)
     RECTANGLE_WIDTH = 10
@@ -13,7 +14,13 @@ class Frame:
 
     def draw_rectangle(self, coordinates):
         for x, y, w, h in coordinates:
-            cv2.rectangle(self.__frame, (x, y), (x+w, y+h), Frame.RECTANGLR_COLOR, Frame.RECTANGLE_WIDTH)
+            cv2.rectangle(
+                self.__frame,
+                (x, y),
+                (x + w, y + h),
+                Frame.RECTANGLR_COLOR,
+                Frame.RECTANGLE_WIDTH,
+            )
 
     def show(self):
         frame = cv2.resize(self.__frame, (960, 540))
